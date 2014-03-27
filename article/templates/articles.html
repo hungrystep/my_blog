@@ -1,0 +1,14 @@
+{%extends 'main.html'%}
+{%load staticfiles%}
+
+{%block article%}
+
+{%for article in articles%}
+	<h2><a href="/articles/get/{{article.id}}">{{article.article_title}}</a></h2>
+	<h6>Дата публикации: {{article.article_date}}</h6>
+	<p>{{article.article_text|truncatewords:"7"}}</p>
+	<p><a href="/articles/addlike/{{article.id}}/"><img src="{%static "image.jpg"%}" width="25px" height="25px" "/></a> {{article.article_likes}}</p>
+	<hr>
+{%endfor%}
+
+{%endblock%}

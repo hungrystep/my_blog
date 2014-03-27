@@ -26,6 +26,11 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TEMPLATE_DIRS=(
+    '/home/vladimir/first_django/bin/my_blog/templates',
+    '/home/vladimir/first_django/bin/my_blog/article/templates'
+    )
+
 
 # Application definition
 
@@ -81,3 +86,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+   ('static','/home/vladimir/first_django/bin/my_blog/static'),
+)

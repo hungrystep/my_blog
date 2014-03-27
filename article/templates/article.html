@@ -1,0 +1,20 @@
+{%extends 'main.html'%}
+{%load staticfiles%}
+
+{%block article%}
+
+<h2>{{article.article_title}}</h2>
+<h6>{{article.article_date}}</h6>
+<p>{{article.article_text}}</p>
+<hr>
+<p>Комментарии </p>
+{%for comment in comments%}
+	<p>{{comment.comments_text}}</p>
+{%endfor%}
+<form action="/articles/addcomment/{{article.id}}/" method='POST'>
+	{% csrf_token %}
+	{{form}}
+	<input type='Submit' class='button' text="Добавить комментарий">
+</form>
+{%endblock%}
+
